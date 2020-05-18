@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Subscription</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Subscription</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="age" placeholder="Age" required="required" /><br>
+    	<input type="text" name="job" placeholder="Job - Integer(0-11)" required="required" /><br>
+        <input type="text" name="marital" placeholder="Marital Status  - Integer(0-3)" required="required" /><br>
+        <input type="text" name="default" placeholder="Default - Integer(0-2)" required="required" /><br>
+        <input type="text" name="housing" placeholder="Housing - Integer(0-2)" required="required" /><br>
+        <input type="text" name="loan" placeholder="Loan - Integer(0-2)" required="required" /><br>
+        <input type="text" name="contact" placeholder="Contact - Integer(0-1)" required="required" /><br>
+        <input type="text" name="month" placeholder="Month - Integer(1-12)" required="required" /><br>
+        <input type="text" name="campaign" placeholder="Campaign - Integer(1-60)" required="required" /><br>
+        <input type="text" name="pdays" placeholder="Pdays - Integer(0-28)" required="required" /><br>
+        <input type="text" name="previous" placeholder="Previous - Integer(0-7)" required="required" /><br>
+        <input type="text" name="poutcome" placeholder="Poutcome - Integer(0-2)" required="required" /><br>
+        <input type="text" name="emp.var.rate" placeholder="emp.var.rate - Float(-2,2)" required="required" /><br>
+        <input type="text" name="cons.price.idx" placeholder="cons.price.idx - Float(-3,3)" required="required" /><br>
+        <input type="text" name="cons.conf.idx" placeholder="cons.conf.idx - Float(-3,3)" required="required" /><br>
+        <input type="text" name="euribor3m" placeholder="euribor3m - Float(-3,3)" required="required" /><br>
+        <input type="text" name="nr.employed" placeholder="nr.employed - Float(-3,3)" required="required" /><br>
+        <input type="text" name="day_of_week_ordinal" placeholder="Day_of_week - Integer(1-5)" required="required" /><br>
+        <input type="text" name="education_ordinal" placeholder="Education - Integer(1-8)" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+
+
+   <br>
+   <br>
+
+
+ </div>
+ {{pred}}
+
+</body>
+</html>
